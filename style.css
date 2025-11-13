@@ -4,7 +4,7 @@ body {
 
 .gradient-bg {
   /* O gradiente original do HTML, que será substituído pelo JS */
-  background: linear-gradient(135deg, #fecaca 0%, #fca5a5 25%, #f87171 50%, #ef4444 75%, #dc2626 100%);
+  background: linear-gradient(135deg, #e53e3e 0%, #f03434 25%, #e52020 50%, #f31a1a 75%, #e20909 100%);
 }
 
 .section-card {
