@@ -1,37 +1,43 @@
 body {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
-
+    
 .gradient-bg {
-  /* O gradiente original do HTML, que será substituído pelo JS */
-  background: linear-gradient(135deg, #e53e3e 0%, #f03434 25%, #e52020 50%, #f31a1a 75%, #e20909 100%);
+    /* Gradiente de fundo definido no body */
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
 }
-
+    
 .section-card {
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Estilo dos cartões das seções com efeito de vidro (blur) */
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
-
+    
 .hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Transição para o efeito de elevação */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+    
 .hover-lift:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    /* Efeito de elevação (levantar e sombra) */
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
-
+    
 .nav-link {
-  transition: all 0.3s ease;
+    /* Transição para links de navegação */
+    transition: all 0.3s ease;
 }
-
+    
 .nav-link:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: scale(1.05);
+    /* Efeito hover dos links de navegação */
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
 }
-
+    
 .section-icon {
-  width: 60px;
-  height: 60px;
+    /* Tamanho padronizado para o container dos ícones */
+    width: 60px;
+    height: 60px;
 }

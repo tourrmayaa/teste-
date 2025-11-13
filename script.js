@@ -1,7 +1,6 @@
-// Default configuration
+// Default configuration for Element SDK
 const defaultConfig = {
     nome_principal: "MAYRA",
-    sobre_mim_texto: "Olá, sou Mayra Calegario, tenho 16 anos e estou cursando Desenvolvimento de Sistemas",
     familia_titulo: "Família",
     familia_texto: "A família é a base de tudo. Aqui compartilho momentos especiais e valores que moldaram quem sou hoje.",
     curso_titulo: "Curso",
@@ -19,7 +18,7 @@ const defaultConfig = {
     font_size: 16
 };
 
-// Mobile menu toggle
+// Mobile menu toggle logic
 document.getElementById('menu-toggle').addEventListener('click', function() {
     const mobileMenu = document.getElementById('mobile-menu');
     mobileMenu.classList.toggle('hidden');
@@ -49,7 +48,6 @@ async function onConfigChange(config) {
 
     // Update text content
     document.getElementById('nome-principal').textContent = config.nome_principal || defaultConfig.nome_principal;
-    document.getElementById('sobre-mim-texto').textContent = config.sobre_mim_texto || defaultConfig.sobre_mim_texto;
     document.getElementById('familia-titulo').textContent = config.familia_titulo || defaultConfig.familia_titulo;
     document.getElementById('familia-texto').textContent = config.familia_texto || defaultConfig.familia_texto;
     document.getElementById('curso-titulo').textContent = config.curso_titulo || defaultConfig.curso_titulo;
@@ -66,6 +64,7 @@ async function onConfigChange(config) {
     const primaryActionColor = config.primary_action_color || defaultConfig.primary_action_color;
     const secondaryActionColor = config.secondary_action_color || defaultConfig.secondary_action_color;
 
+    // Apply gradient background dynamically
     document.body.style.background = `linear-gradient(135deg, ${backgroundColor} 0%, ${primaryActionColor} 100%)`;
     document.body.style.color = textColor;
 
@@ -77,8 +76,12 @@ async function onConfigChange(config) {
     // Update header background
     document.querySelector('header').style.backgroundColor = primaryActionColor + 'e6';
 
-    // Update nav links hover
+    // Update nav links hover functionality (re-applied dynamically on change)
     document.querySelectorAll('.nav-link').forEach(link => {
+        // Remove existing listeners to avoid duplicates
+        link.onmouseenter = null;
+        link.onmouseleave = null;
+
         link.addEventListener('mouseenter', function() {
             this.style.backgroundColor = secondaryActionColor;
         });
@@ -167,7 +170,6 @@ function mapToCapabilities(config) {
 function mapToEditPanelValues(config) {
     return new Map([
         ["nome_principal", config.nome_principal || defaultConfig.nome_principal],
-        ["sobre_mim_texto", config.sobre_mim_texto || defaultConfig.sobre_mim_texto],
         ["familia_titulo", config.familia_titulo || defaultConfig.familia_titulo],
         ["familia_texto", config.familia_texto || defaultConfig.familia_texto],
         ["curso_titulo", config.curso_titulo || defaultConfig.curso_titulo],
